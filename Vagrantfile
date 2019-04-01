@@ -6,6 +6,7 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.box = "offensive-security/kali-linux-light"
+  #testart mazenovi/linuxmint
 
   config.vm.provider "virtualbox" do |v|
     v.gui = true
