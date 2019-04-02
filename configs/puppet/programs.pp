@@ -16,12 +16,12 @@ apt::source { 'chrome-repo':
 
 package { 
     [
-        "openjdk-11-jdk", 
+        "openjdk-11-jdk",
+        "maven",
         "nodejs",
         "npm",
         "git",
-        "google-chrome-stable",
-        "code"
+        "google-chrome-stable"
     ]:
     ensure => installed,
     require => [Exec["apt-update"],Apt::Source["chrome-repo"]]
