@@ -1,4 +1,9 @@
-# Falta  / tomcat / compartilhamento entre maquinas 
+# Falta:
+# tomcat 
+# limpeza do tar.gz eclipse
+# melhorando logs
+# customizar git
+# customizar mvn
 
 $script_app_basic = <<-SCRIPT
   apt-get -y install maven && \
@@ -6,6 +11,7 @@ $script_app_basic = <<-SCRIPT
   apt-get -y install npm && \
   apt-get -y install openjdk-11-jdk && \
   apt-get -y install git
+  git config --global http.sslVerify false
 SCRIPT
 
 $script_vscode = <<-SCRIPT
@@ -50,7 +56,7 @@ SCRIPT
 Vagrant.configure("2") do |config|
 
   config.vm.box = "jwatson3d/linuxmint19-xfce"
-  
+  config.vm.synced_folder "/shared", "/shared"
   config.vm.provider "virtualbox" do |v|
     v.gui = true
     v.name = "development_workstation"
