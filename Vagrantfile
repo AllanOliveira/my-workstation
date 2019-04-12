@@ -1,9 +1,11 @@
 # Falta:
 # tomcat 
+# svn
 # limpeza do tar.gz eclipse
 # melhorando logs
 # customizar git
 # customizar mvn
+# configurar rede como bridge
 
 $script_app_basic = <<-SCRIPT
   apt-get -y install maven && \
